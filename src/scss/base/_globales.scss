@@ -1,9 +1,36 @@
 @use 'variables' as v;
 
+html,
 body{
-    background-color: #000;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    background: linear-gradient(135deg, #F443B4, #FF80AB, #FFC0CB);
 }
 
-h1{
-    background-color: red;
+body{
+    background: linear-gradient(135deg, #F443B4, #FF80AB, #FFC0CB);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
 }
+
+.br{
+    border-radius: 50%;
+}
+
+.steven{
+    position: relative;
+    width: 500px;
+    height: 500px;
+
+    filter: drop-shadow(0 0 4px);
+}
+

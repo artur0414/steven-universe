@@ -1,0 +1,300 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.face{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    background-color: v.$steven-skin;
+
+    @include m.center-horizontal(50%);
+
+    top: 150px;
+
+    z-index: 3;
+
+    //down-head 
+
+    &::before{
+        content: "";
+        position: absolute;
+
+        width: 270px;
+        height: 230px;
+
+        background-color: v.$steven-skin;
+
+        border-radius: 50%;
+        
+        @include m.center-horizontal(50%);
+
+        top: 95px;
+    }
+
+    
+}
+
+//ears
+
+.ears{
+    position: absolute;
+
+    width: 320px;
+    height: 80px;
+
+    @include m.center-horizontal(51%);
+
+    top: 280px;
+
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 2;
+
+    .ear{
+        width: 50px;
+        height: 100%;
+
+        background-color: v.$steven-skin;
+    }
+}
+
+
+//eyes
+
+.eyes{
+    position: absolute;
+    width: 190px;
+    height: 100px;
+
+
+    @include m.center-horizontal(50%);
+
+    top: 80px;
+
+
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 4;
+
+    .eye{
+        width: 85px;
+        height: 100%;
+        position: relative;
+        background-color: v.$steven-eyes;
+
+        border-radius: 50% 50% 45% 45%;
+
+        rotate: 4deg;
+
+        @include m.pseudo-elements;
+
+        &::before{
+            width: 40px;
+            height: 50px;
+
+            background-color: v.$steven-border;
+            
+            @include m.center-horizontal(50%);
+            top: 30px;
+            border-radius: 50%;
+        }
+
+        &::after{
+            width: 15px;
+            height: 20px;
+
+            left: 45px;
+            top: 40px;
+            border-radius: 50%;
+
+            background-color: v.$steven-eyes;
+
+            rotate: -15deg;
+        }
+    }
+
+    .eye-r{
+        rotate: -4deg;
+
+        &::after{
+            rotate: -25deg;
+        }
+    }
+
+}
+
+//eyesbrows
+
+.eyebrows{
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    
+    
+    @include m.center-horizontal(50%);
+
+    top: 30px;
+    
+
+    display: flex;
+    justify-content: space-between;
+
+    .eyebrow{
+        position: relative;
+        width: 60px;
+        height: 25px;
+
+        background-color: v.$steven-hair;
+
+        border-radius: 45%;
+
+        top: 5px;
+
+        rotate: -15deg;
+    }
+
+    .eyebrow-r{
+        rotate: 15deg;
+        top: 10px;
+    }
+}
+
+
+
+// nose
+
+.nose{
+    position: absolute;
+    width: 1.5px;
+    height: 12px;
+
+    background-color: v.$steven-border;
+
+    left: 46%;
+    top: 180px;
+
+    rotate: -5deg;
+
+    box-shadow: 6px 0;
+
+    @include m.pseudo-elements;
+
+    &::before{
+        width: 1px;
+        height: 15px;
+
+        background-color: v.$steven-border;
+
+        top: -14px;
+        left: -1px;
+        rotate: 45deg;
+
+    }
+
+    &::after{
+        width: 1px;
+        height: 16px;
+
+        background-color: v.$steven-border;
+
+        top: -1px;
+        left: -6px;
+        
+        rotate: -5deg;
+    }
+
+
+    .nose-shadow{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        
+        border-radius: 10% 45% 40% 10%;
+
+        background-color: #3b1b1477;
+
+        rotate: 0;
+
+        left: -4px;
+        top: -1px;
+
+    }
+
+}
+
+
+//mouth 
+
+.mouth{
+    position: absolute;
+    
+    width: 150px;
+    height: 54px;
+
+    top: 220px;
+    left: 83px;
+
+
+    rotate: -20deg;
+
+    overflow: hidden;
+
+
+    @include m.pseudo-elements;
+
+    &::before{
+            
+        width: 100px;
+        height: 50px;
+        background-color: v.$steven-eyes;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 10%;
+        border: 1px solid v.$steven-border;
+        border-right: v.$steven-eyes;
+        
+    }
+
+    &::after{
+        width: 50px;
+        height: 50px;
+
+        background-color: v.$steven-eyes;
+        left: 90px;
+        border-radius: 0 0 50px 0;
+
+        border: 1px solid v.$steven-border;
+        border-left: v.$steven-eyes;
+        
+    }
+
+    .teeth{
+        position: absolute;
+        width: 1px;
+        height: 42px;
+        background-color: v.$steven-border;
+        left: 40px;
+        transform: rotate(10deg);
+
+        z-index: 4;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50px;
+            width: 1px;
+            height: 53px;
+            background-color: v.$steven-border;
+            
+        }
+    }
+
+    
+
+}
+

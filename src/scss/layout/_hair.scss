@@ -1,2 +1,55 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
+
+// Steven's hair
+
+.hair{
+    position: absolute;
+    width: 300px;
+    height: 310px;
+    background-color: v.$steven-hair;
+
+
+    @include m.position-center(50%, 50%);
+
+    @include m.pseudo-elements-complete(200px, 200px, v.$steven-hair);
+
+    &::before{
+        border-radius: 50%;
+
+        @include m.center-horizontal(50%);
+
+        top: -50px;
+    }
+
+    &::after{
+        width: 200px;
+        height: 200px;
+
+        left: -30px;
+
+        border-radius: 50%;
+    }
+
+    .child{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: v.$steven-hair;
+
+        left: 140px;
+
+        @include m.pseudo-elements-complete(100%, 100%, v.$steven-hair);
+
+        &::before{
+            border-radius: 50%;
+            left: -20px;
+            top: 80px;
+        }
+        &::after{
+            border-radius: 50%;
+            top: 80px;
+            left: -160px;
+        }
+    }
+}
